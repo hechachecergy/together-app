@@ -130,6 +130,8 @@
   </main>
 
   <script type="module">
+    import { initTrial } from './trial.js';
+    if (!initTrial()) throw new Error('trial expired');
     import './app.js';
     import { initConflict } from './conflict.js';
     initConflict();

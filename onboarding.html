@@ -98,6 +98,8 @@
   </main>
 
   <script type="module">
+    import { initTrial } from './trial.js';
+    if (!initTrial()) throw new Error('trial expired');
     import { saveCouple } from './storage.js';
 
     // Avatar pickers

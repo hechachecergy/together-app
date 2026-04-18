@@ -93,6 +93,8 @@
   </footer>
 
   <script type="module">
+    import { initTrial } from './trial.js';
+    if (!initTrial()) throw new Error('trial expired');
     import { hasCouple } from './storage.js';
     if (hasCouple()) {
       document.querySelector('.hero__cta').innerHTML = `
