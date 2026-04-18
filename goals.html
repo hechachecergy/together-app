@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Set Your Goals — Together</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="page-wrap">
+
+  <nav class="nav">
+    <div class="nav__inner">
+      <div class="nav__logo"><span>❤️</span> Together</div>
+      <ul class="nav__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <div class="container container--narrow" style="padding-top:2.5rem">
+
+      <div class="progress-wrap">
+        <div class="progress-bar">
+          <div class="progress-bar__fill" id="progress-fill" style="width:33%"></div>
+        </div>
+        <span class="progress-step" id="step-label">Step 1 of 3</span>
+      </div>
+
+      <div id="goals-content"></div>
+
+    </div>
+  </main>
+
+  <script type="module">
+    import './js/app.js';
+    import { initGoals } from './js/goals.js';
+    initGoals();
+  </script>
+
+</body>
+</html>

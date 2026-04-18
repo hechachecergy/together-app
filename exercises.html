@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercises — Together</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="page-wrap">
+
+  <nav class="nav">
+    <div class="nav__inner">
+      <div class="nav__logo"><span>❤️</span> Together</div>
+      <ul class="nav__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="checkin.html">Check-In</a></li>
+        <li><a href="exercises.html" class="active">Exercises</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <div class="container" style="padding-top:2rem">
+
+      <div class="section-header mb-1">
+        <div>
+          <h1 class="mb-1">Exercise Gallery</h1>
+          <p>Pick one to do together this week. Most take under 30 minutes.</p>
+        </div>
+        <a href="conflict.html" class="btn btn--ghost btn--sm">⚡ Log a conflict</a>
+      </div>
+
+      <!-- Recommended banner -->
+      <div id="recommended-banner" class="card card--accent mb-4 hidden">
+        <h3 class="mb-1">Recommended for you</h3>
+        <p class="mb-3 text-sm">Based on your recent check-in, these exercises fit where you are right now.</p>
+        <div id="recommended-list" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1rem"></div>
+      </div>
+
+      <!-- Filter tabs -->
+      <div class="filter-tabs mb-3">
+        <button class="filter-tab active" data-filter="all">All</button>
+        <button class="filter-tab" data-filter="communication">Communication</button>
+        <button class="filter-tab" data-filter="conflict">Conflict</button>
+        <button class="filter-tab" data-filter="intimacy">Intimacy</button>
+        <button class="filter-tab" data-filter="connection">Connection</button>
+        <button class="filter-tab" data-filter="teamwork">Teamwork</button>
+        <button class="filter-tab" data-filter="trust">Trust</button>
+        <button class="filter-tab" data-filter="listening">Listening</button>
+      </div>
+
+      <!-- Exercise grid -->
+      <div id="exercise-grid"
+           style="display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:1rem">
+        <div class="empty-state">
+          <div class="empty-state__icon">⏳</div>
+          <p>Loading exercises…</p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Exercise Modal -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal" id="modal">
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <script type="module">
+    import './js/app.js';
+    import { initExercises } from './js/exercises.js';
+    initExercises();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard — Together</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="page-wrap">
+
+  <nav class="nav">
+    <div class="nav__inner">
+      <div class="nav__logo"><span>❤️</span> Together</div>
+      <ul class="nav__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="checkin.html">Check-In</a></li>
+        <li><a href="exercises.html">Exercises</a></li>
+        <li><a href="dashboard.html" class="active">Dashboard</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <div class="container container--wide" style="padding-top:2rem">
+
+      <!-- Header -->
+      <div class="flex justify-between items-center mb-4" style="flex-wrap:wrap; gap:1rem">
+        <div>
+          <h1 id="greeting" class="mb-1">Your Dashboard</h1>
+          <p>Your relationship snapshot — updated every week.</p>
+        </div>
+        <div class="flex gap-2" style="flex-wrap:wrap">
+          <a href="checkin.html"  class="btn btn--primary">+ Weekly Check-In</a>
+          <a href="conflict.html" class="btn btn--ghost">⚡ Log Conflict</a>
+        </div>
+      </div>
+
+      <!-- Coach nudge -->
+      <div id="coach-nudge-wrap" class="mb-4 hidden"></div>
+
+      <!-- Stats row -->
+      <div class="stat-grid mb-4">
+        <div class="stat-card">
+          <div class="stat-card__number" id="stat-checkins">0</div>
+          <div class="stat-card__label">Check-ins completed</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card__number" id="stat-exercises">0</div>
+          <div class="stat-card__label">Exercises done</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card__number" id="stat-conflicts">0</div>
+          <div class="stat-card__label">Conflict reflections</div>
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; align-items:start">
+
+        <!-- Left column -->
+        <div>
+
+          <!-- Connection trend -->
+          <div class="card mb-3">
+            <div class="section-header mb-2">
+              <h3>Connection Score Trend</h3>
+              <span class="text-xs text-muted">Last 8 weeks</span>
+            </div>
+            <div id="trend-chart">
+              <p class="text-muted text-sm">Complete your first check-in to see your trend.</p>
+            </div>
+          </div>
+
+          <!-- Goal progress -->
+          <div class="card">
+            <div class="section-header mb-2">
+              <h3>Goal Areas</h3>
+              <a href="goals.html" class="text-sm text-primary">Edit goals</a>
+            </div>
+            <div id="goal-bars">
+              <p class="text-muted text-sm">No goals set yet. <a href="goals.html">Set your focus areas →</a></p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right column -->
+        <div>
+
+          <!-- Milestones -->
+          <div class="card mb-3">
+            <h3 class="mb-3">Milestones</h3>
+            <div class="milestone-grid" id="milestones-wrap"></div>
+          </div>
+
+          <!-- Quick actions -->
+          <div class="card mb-3">
+            <h3 class="mb-3">Quick Actions</h3>
+            <div style="display:flex; flex-direction:column; gap:.65rem">
+              <a href="checkin.html"  class="btn btn--primary btn--full">📋 Do this week's check-in</a>
+              <a href="exercises.html" class="btn btn--secondary btn--full">💪 Browse exercises</a>
+              <a href="conflict.html"  class="btn btn--ghost btn--full">⚡ Reflect on a conflict</a>
+            </div>
+          </div>
+
+          <!-- Recent check-ins -->
+          <div class="card">
+            <div class="section-header mb-2">
+              <h3>Recent Check-Ins</h3>
+              <a href="checkin.html" class="text-sm text-primary">New check-in</a>
+            </div>
+            <div id="recent-checkins">
+              <p class="text-muted text-sm">No check-ins yet.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Reset (development / privacy) -->
+      <div class="text-center mt-4" style="padding-bottom:1rem">
+        <button id="reset-btn" class="btn btn--ghost btn--sm" style="opacity:.5">
+          🗑 Clear all data and start over
+        </button>
+      </div>
+
+    </div>
+  </main>
+
+  <script type="module">
+    import './js/app.js';
+    import { initDashboard } from './js/dashboard.js';
+    initDashboard();
+
+    document.getElementById('reset-btn').addEventListener('click', () => {
+      if (confirm('This will delete all your data and return to the start. Are you sure?')) {
+        import('./js/storage.js').then(({ storage }) => {
+          storage.clear();
+          location.href = 'index.html';
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>

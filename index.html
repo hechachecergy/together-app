@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Together — Relationship Coaching App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="page-wrap">
+
+  <nav class="nav">
+    <div class="nav__inner">
+      <div class="nav__logo"><span>❤️</span> Together</div>
+      <ul class="nav__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="checkin.html">Check-In</a></li>
+        <li><a href="exercises.html">Exercises</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="hero__eyebrow">Self-guided relationship coaching</div>
+      <h1 class="serif">Your relationship deserves more than good&nbsp;intentions.</h1>
+      <p>Together is a private, self-guided app that helps couples communicate better, work through conflict, and build a relationship they're proud&nbsp;of.</p>
+      <div class="hero__cta">
+        <a href="onboarding.html" class="btn btn--primary btn--lg">Start the Journey →</a>
+        <a href="exercises.html"  class="btn btn--ghost btn--lg">Browse Exercises</a>
+      </div>
+    </section>
+
+    <div class="container container--wide">
+      <div class="features">
+        <div class="feature-card">
+          <div class="feature-card__icon">📋</div>
+          <h3>Weekly Check-Ins</h3>
+          <p>A structured 5-question form you both complete each week — side by side, with no arguments required.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card__icon">⚡</div>
+          <h3>Conflict Reflection</h3>
+          <p>After a disagreement, each partner reflects privately — then you read each other's perspective 24 hours later.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card__icon">💪</div>
+          <h3>10 Exercises</h3>
+          <p>From active listening to intimacy mapping — each exercise is under 30 minutes and built around real skills.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card__icon">📈</div>
+          <h3>Progress Dashboard</h3>
+          <p>See your connection score trend over time, track milestones, and get coach-like prompts based on your data.</p>
+        </div>
+      </div>
+
+      <hr class="divider">
+
+      <div style="text-align:center; padding: 2rem 0 1rem">
+        <h2 class="mb-2">How it works</h2>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:1rem; max-width:700px; margin:0 auto; text-align:left">
+          <div class="card">
+            <div style="font-size:1.4rem; margin-bottom:.5rem">1️⃣</div>
+            <h4 class="mb-1">Set up your couple profile</h4>
+            <p>Add both names and choose your 3 relationship focus areas.</p>
+          </div>
+          <div class="card">
+            <div style="font-size:1.4rem; margin-bottom:.5rem">2️⃣</div>
+            <h4 class="mb-1">Do a weekly check-in</h4>
+            <p>5 questions each, answered privately then shared on-screen.</p>
+          </div>
+          <div class="card">
+            <div style="font-size:1.4rem; margin-bottom:.5rem">3️⃣</div>
+            <h4 class="mb-1">Try an exercise</h4>
+            <p>The app recommends exercises based on how your week went.</p>
+          </div>
+          <div class="card">
+            <div style="font-size:1.4rem; margin-bottom:.5rem">4️⃣</div>
+            <h4 class="mb-1">Watch your progress</h4>
+            <p>Your dashboard shows your connection score over time and earned milestones.</p>
+          </div>
+        </div>
+        <a href="onboarding.html" class="btn btn--primary btn--lg" style="margin-top:2rem">Get Started — It's Free</a>
+      </div>
+    </div>
+  </main>
+
+  <footer style="text-align:center; padding:1.5rem; font-size:.82rem; color:var(--color-muted); border-top:1px solid var(--color-border)">
+    Together · All data stays on your device · No account required
+  </footer>
+
+  <script type="module">
+    import { hasCouple } from './js/storage.js';
+    if (hasCouple()) {
+      document.querySelector('.hero__cta').innerHTML = `
+        <a href="checkin.html"  class="btn btn--primary btn--lg">Weekly Check-In →</a>
+        <a href="dashboard.html" class="btn btn--ghost btn--lg">View Dashboard</a>`;
+    }
+  </script>
+</body>
+</html>

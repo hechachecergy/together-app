@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get Started — Together</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="page-wrap">
+
+  <nav class="nav">
+    <div class="nav__inner">
+      <div class="nav__logo"><span>❤️</span> Together</div>
+      <ul class="nav__links">
+        <li><a href="index.html">Home</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <div class="container container--narrow" style="padding-top:2.5rem">
+
+      <div class="text-center mb-4">
+        <div class="hero__eyebrow" style="display:inline-block">Step 1 of 3</div>
+        <h1 class="mt-2 mb-1">Let's set up your couple profile.</h1>
+        <p>Add both partners' names below. Everything stays private on this device — no account required.</p>
+      </div>
+
+      <div class="partner-grid" id="partner-grid">
+
+        <!-- Partner 1 -->
+        <div class="partner-card" id="card-p1">
+          <div class="partner-card__label">Partner 1</div>
+          <div class="avatar-picker" id="avatar-p1">
+            <button class="avatar-btn selected" data-avatar="🌻" title="Sunflower">🌻</button>
+            <button class="avatar-btn" data-avatar="🌊" title="Wave">🌊</button>
+            <button class="avatar-btn" data-avatar="🦋" title="Butterfly">🦋</button>
+            <button class="avatar-btn" data-avatar="🌙" title="Moon">🌙</button>
+            <button class="avatar-btn" data-avatar="⚡" title="Lightning">⚡</button>
+            <button class="avatar-btn" data-avatar="🌿" title="Leaf">🌿</button>
+          </div>
+          <div class="form-group">
+            <label for="name-p1">First name</label>
+            <input type="text" id="name-p1" placeholder="e.g. Alex" autocomplete="off" maxlength="30">
+          </div>
+        </div>
+
+        <!-- Partner 2 -->
+        <div class="partner-card" id="card-p2">
+          <div class="partner-card__label">Partner 2</div>
+          <div class="avatar-picker" id="avatar-p2">
+            <button class="avatar-btn selected" data-avatar="🌹" title="Rose">🌹</button>
+            <button class="avatar-btn" data-avatar="🔥" title="Fire">🔥</button>
+            <button class="avatar-btn" data-avatar="🌈" title="Rainbow">🌈</button>
+            <button class="avatar-btn" data-avatar="☀️" title="Sun">☀️</button>
+            <button class="avatar-btn" data-avatar="🦁" title="Lion">🦁</button>
+            <button class="avatar-btn" data-avatar="🍀" title="Clover">🍀</button>
+          </div>
+          <div class="form-group">
+            <label for="name-p2">First name</label>
+            <input type="text" id="name-p2" placeholder="e.g. Jordan" autocomplete="off" maxlength="30">
+          </div>
+        </div>
+
+      </div>
+
+      <div class="form-group mt-3">
+        <label for="duration">How long have you been together?</label>
+        <select id="duration">
+          <option value="">Select…</option>
+          <option value="under1">Under 1 year</option>
+          <option value="1to3">1–3 years</option>
+          <option value="3to7">3–7 years</option>
+          <option value="7plus">7+ years</option>
+        </select>
+      </div>
+
+      <div class="checkbox-group mt-3">
+        <input type="checkbox" id="privacy-agree">
+        <label for="privacy-agree" style="font-weight:400">
+          We both agree to use this app together and keep what we share here private.
+        </label>
+      </div>
+
+      <div id="error-msg" class="hidden" style="color:#c0392b; font-size:.88rem; margin-top:.75rem"></div>
+
+      <button class="btn btn--primary btn--lg btn--full mt-4" id="begin-btn">
+        Let's Begin →
+      </button>
+
+      <p class="text-center text-muted mt-3" style="font-size:.82rem">
+        Already set up? <a href="dashboard.html">Go to your dashboard</a>
+      </p>
+
+    </div>
+  </main>
+
+  <script type="module">
+    import { saveCouple } from './js/storage.js';
+
+    // Avatar pickers
+    document.querySelectorAll('.avatar-picker').forEach(picker => {
+      picker.querySelectorAll('.avatar-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          picker.querySelectorAll('.avatar-btn').forEach(b => b.classList.remove('selected'));
+          btn.classList.add('selected');
+        });
+      });
+    });
+
+    // Mark card filled on input
+    ['p1','p2'].forEach(p => {
+      document.getElementById(`name-${p}`).addEventListener('input', e => {
+        document.getElementById(`card-${p}`).classList.toggle('filled', e.target.value.trim().length > 0);
+      });
+    });
+
+    document.getElementById('begin-btn').addEventListener('click', () => {
+      const p1Name = document.getElementById('name-p1').value.trim();
+      const p2Name = document.getElementById('name-p2').value.trim();
+      const duration = document.getElementById('duration').value;
+      const agreed   = document.getElementById('privacy-agree').checked;
+      const errEl    = document.getElementById('error-msg');
+
+      if (!p1Name || !p2Name) {
+        errEl.textContent = 'Please enter both partners\' names.';
+        errEl.classList.remove('hidden');
+        return;
+      }
+      if (!agreed) {
+        errEl.textContent = 'Please check the privacy agreement to continue.';
+        errEl.classList.remove('hidden');
+        return;
+      }
+      errEl.classList.add('hidden');
+
+      const p1Avatar = document.querySelector('#avatar-p1 .avatar-btn.selected')?.dataset.avatar || '🌻';
+      const p2Avatar = document.querySelector('#avatar-p2 .avatar-btn.selected')?.dataset.avatar || '🌹';
+
+      saveCouple({
+        p1: { name: p1Name, avatar: p1Avatar },
+        p2: { name: p2Name, avatar: p2Avatar },
+        duration,
+        createdAt: new Date().toISOString(),
+      });
+
+      location.href = 'goals.html';
+    });
+  </script>
+
+</body>
+</html>

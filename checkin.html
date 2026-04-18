@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weekly Check-In — Together</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="page-wrap">
+
+  <nav class="nav">
+    <div class="nav__inner">
+      <div class="nav__logo"><span>❤️</span> Together</div>
+      <ul class="nav__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="checkin.html" class="active">Check-In</a></li>
+        <li><a href="exercises.html">Exercises</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <div class="container container--narrow" style="padding-top:2rem">
+
+      <div id="checkin-wrap">
+
+        <div class="text-center mb-3">
+          <div class="hero__eyebrow" style="display:inline-block" id="checkin-week">Weekly Check-In</div>
+          <h1 class="mt-2 mb-1">How was your week?</h1>
+          <p>Each partner answers these 5 questions privately, then you see each other's answers together.</p>
+        </div>
+
+        <!-- Partner toggle -->
+        <div class="flex justify-between items-center mb-3" style="flex-wrap:wrap; gap:.75rem">
+          <div class="toggle-wrap">
+            <button class="toggle-btn active" id="toggle-p1">Partner 1</button>
+            <button class="toggle-btn" id="toggle-p2">Partner 2</button>
+          </div>
+          <span class="text-sm text-muted" id="partner-status"></span>
+        </div>
+
+        <!-- Switch banner -->
+        <div id="switch-banner" class="coach-nudge mb-3 hidden">
+          <div class="coach-nudge__icon">🔄</div>
+          <div class="coach-nudge__body">
+            <div class="coach-nudge__text" style="font-weight:500"></div>
+          </div>
+        </div>
+
+        <h3 class="mb-3" id="current-partner-name">Partner 1's check-in</h3>
+
+        <!-- Already submitted notice -->
+        <div id="already-submitted" class="card card--success hidden" style="margin-bottom:1rem">
+          <p class="text-success fw-600">✓ This partner has already submitted their check-in for this week.</p>
+        </div>
+
+        <!-- The form -->
+        <div id="checkin-form">
+
+          <!-- Q1: Connection score -->
+          <div class="card mb-3">
+            <div class="form-group">
+              <label>How connected did you feel to your partner this week?</label>
+              <div class="slider-wrap mt-2">
+                <input type="range" id="connection-score" min="1" max="10" value="7">
+                <div class="slider-labels"><span>Distant</span><span>Very connected</span></div>
+                <div class="slider-value" id="score-display">7</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q2: Best moment -->
+          <div class="card mb-3">
+            <div class="form-group">
+              <label for="best-moment">What was the best moment between you this week?
+                <span class="label-hint">Be specific — even something small.</span>
+              </label>
+              <input type="text" id="best-moment" placeholder="e.g. We laughed at the same dumb thing on TV">
+            </div>
+          </div>
+
+          <!-- Q3: Conflict -->
+          <div class="card mb-3">
+            <div class="form-group">
+              <label>Was there a moment of friction or disconnection this week?</label>
+              <div class="flex items-center gap-2 mt-2">
+                <input type="checkbox" id="conflict-toggle" style="width:18px;height:18px;accent-color:var(--color-primary);cursor:pointer">
+                <label for="conflict-toggle" style="font-weight:400;cursor:pointer">Yes, something came up</label>
+              </div>
+            </div>
+            <div id="conflict-detail-box" class="hidden mt-2">
+              <div class="form-group">
+                <label for="conflict-desc">Briefly describe what happened
+                  <span class="label-hint">— just the facts, no blame needed.</span>
+                </label>
+                <textarea id="conflict-desc" rows="2" placeholder="e.g. We argued about plans on Saturday and I shut down."></textarea>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q4: Need more -->
+          <div class="card mb-3">
+            <div class="form-group">
+              <label for="need-more">What did you need more of this week?</label>
+              <select id="need-more">
+                <option value="">Choose one…</option>
+                <option value="Quality time">Quality time together</option>
+                <option value="Physical affection">Physical affection</option>
+                <option value="Open communication">Open communication</option>
+                <option value="Space and independence">Space and independence</option>
+                <option value="Support and reassurance">Support and reassurance</option>
+                <option value="Fun and lightness">Fun and lightness</option>
+                <option value="Appreciation">Appreciation</option>
+                <option value="Help with responsibilities">Help with responsibilities</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Q5: Appreciation -->
+          <div class="card mb-4">
+            <div class="form-group">
+              <label for="appreciation">One genuine appreciation for your partner this week:</label>
+              <input type="text" id="appreciation" placeholder="e.g. You stayed calm when I was stressed — that meant a lot.">
+            </div>
+          </div>
+
+          <button class="btn btn--primary btn--lg btn--full" id="submit-partner">
+            Submit My Check-In →
+          </button>
+
+          <p class="text-center text-muted mt-2" style="font-size:.82rem">
+            Your answers are hidden until both partners have submitted.
+          </p>
+
+        </div>
+        <!-- /checkin-form -->
+
+      </div>
+      <!-- /checkin-wrap -->
+
+    </div>
+  </main>
+
+  <script type="module">
+    import './js/app.js';
+    import { initCheckin } from './js/checkin.js';
+    initCheckin();
+  </script>
+
+</body>
+</html>

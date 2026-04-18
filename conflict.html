@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conflict Reflection — Together</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="page-wrap">
+
+  <nav class="nav">
+    <div class="nav__inner">
+      <div class="nav__logo"><span>❤️</span> Together</div>
+      <ul class="nav__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="checkin.html">Check-In</a></li>
+        <li><a href="exercises.html">Exercises</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <div class="container container--narrow" style="padding-top:2rem">
+
+      <div id="conflict-wrap">
+
+        <div class="text-center mb-3">
+          <div class="hero__eyebrow" style="display:inline-block">Conflict Reflection</div>
+          <h1 class="mt-2 mb-1">Something happened. Let's understand it&nbsp;together.</h1>
+          <p>Each partner reflects privately. You'll read each other's answers after 24 hours — not to rebut, just to understand.</p>
+        </div>
+
+        <!-- 24-hour reminder -->
+        <div class="coach-nudge mb-3">
+          <div class="coach-nudge__icon">⏳</div>
+          <div class="coach-nudge__body">
+            <div class="coach-nudge__title">Give it 24 hours.</div>
+            <div class="coach-nudge__text">Fill this out as soon as you can, while it's fresh. But wait at least a day before reading each other's answers — you'll both hear it better when the heat has passed.</div>
+          </div>
+        </div>
+
+        <!-- Partner toggle -->
+        <div class="flex justify-between items-center mb-3" style="flex-wrap:wrap; gap:.75rem">
+          <div class="toggle-wrap">
+            <button class="toggle-btn active" id="toggle-p1">Partner 1</button>
+            <button class="toggle-btn" id="toggle-p2">Partner 2</button>
+          </div>
+        </div>
+
+        <!-- Switch banner -->
+        <div id="switch-banner" class="coach-nudge mb-3 hidden">
+          <div class="coach-nudge__icon">🔄</div>
+          <div class="coach-nudge__body">
+            <div class="coach-nudge__text" style="font-weight:500"></div>
+          </div>
+        </div>
+
+        <h3 class="mb-3" id="current-partner-name">Partner 1's reflection</h3>
+
+        <!-- Already submitted notice -->
+        <div id="already-submitted" class="card card--success mb-3 hidden">
+          <p class="text-success fw-600">✓ Already submitted.</p>
+        </div>
+
+        <!-- Form -->
+        <div id="conflict-form">
+
+          <!-- Q1 -->
+          <div class="card mb-3">
+            <div class="form-group">
+              <label for="what-happened">What happened? <span class="label-hint">2–3 sentences, no blame — just the sequence of events.</span></label>
+              <textarea id="what-happened" rows="3" placeholder="e.g. We were getting ready to leave and I asked about the plans. The tone shifted and we both got defensive. It ended with us not speaking for an hour."></textarea>
+            </div>
+          </div>
+
+          <!-- Q2 -->
+          <div class="card mb-3">
+            <div class="form-group">
+              <label>What did you feel in your body when it escalated?
+                <span class="label-hint">Select all that apply.</span>
+              </label>
+              <div class="chip-grid feeling-chips mt-2" id="feeling-grid"></div>
+            </div>
+          </div>
+
+          <!-- Q3 -->
+          <div class="card mb-3">
+            <div class="form-group">
+              <label for="what-needed">What did you need in that moment that you didn't get?</label>
+              <textarea id="what-needed" rows="2" placeholder="e.g. I needed to feel heard before any problem-solving happened. I needed a pause, not a push."></textarea>
+            </div>
+          </div>
+
+          <!-- Q4 -->
+          <div class="card mb-3">
+            <div class="form-group">
+              <label for="what-regret">Is there anything you did during the conflict that you regret?
+                <span class="label-hint">Optional — but honest.</span>
+              </label>
+              <textarea id="what-regret" rows="2" placeholder="e.g. I brought up something unrelated just to win the argument. I went silent instead of saying I needed space."></textarea>
+            </div>
+          </div>
+
+          <!-- Q5 -->
+          <div class="card mb-4">
+            <div class="form-group">
+              <label for="next-time">What would you do differently next time?</label>
+              <textarea id="next-time" rows="2" placeholder="e.g. I'd say 'I need 10 minutes' instead of shutting down. I'd start with how I felt, not what they did wrong."></textarea>
+            </div>
+          </div>
+
+          <button class="btn btn--primary btn--lg btn--full" id="submit-partner">
+            Submit My Reflection →
+          </button>
+
+          <p class="text-center text-muted mt-2" style="font-size:.82rem">
+            Your answers stay hidden until both partners have submitted.
+          </p>
+
+        </div>
+        <!-- /conflict-form -->
+
+      </div>
+      <!-- /conflict-wrap -->
+
+    </div>
+  </main>
+
+  <script type="module">
+    import './js/app.js';
+    import { initConflict } from './js/conflict.js';
+    initConflict();
+  </script>
+
+</body>
+</html>
