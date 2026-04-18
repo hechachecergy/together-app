@@ -6,7 +6,7 @@
   <title>Dashboard — Together</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body class="page-wrap">
 
@@ -130,13 +130,13 @@
   </main>
 
   <script type="module">
-    import './js/app.js';
-    import { initDashboard } from './js/dashboard.js';
+    import './app.js';
+    import { initDashboard } from './dashboard.js';
     initDashboard();
 
     document.getElementById('reset-btn').addEventListener('click', () => {
       if (confirm('This will delete all your data and return to the start. Are you sure?')) {
-        import('./js/storage.js').then(({ storage }) => {
+        import('./storage.js').then(({ storage }) => {
           storage.clear();
           location.href = 'index.html';
         });

@@ -5,7 +5,7 @@ let allExercises = [];
 let activeFilter = 'all';
 
 export async function initExercises() {
-  const res  = await fetch('data/exercises.json');
+  const res  = await fetch('exercises.json');
   allExercises = await res.json();
 
   setupFilters();

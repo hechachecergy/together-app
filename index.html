@@ -6,7 +6,7 @@
   <title>Together — Relationship Coaching App</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body class="page-wrap">
 
@@ -93,7 +93,7 @@
   </footer>
 
   <script type="module">
-    import { hasCouple } from './js/storage.js';
+    import { hasCouple } from './storage.js';
     if (hasCouple()) {
       document.querySelector('.hero__cta').innerHTML = `
         <a href="checkin.html"  class="btn btn--primary btn--lg">Weekly Check-In →</a>
