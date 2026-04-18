@@ -1,0 +1,161 @@
+[
+  {
+    "id": "ex_001",
+    "title": "The Looping Conversation",
+    "description": "Practice reflecting instead of reacting — the foundation of real listening.",
+    "tags": ["communication", "listening"],
+    "duration": "10 min",
+    "difficulty": "Beginner",
+    "steps": [
+      "Partner 1 speaks for 5 minutes about something that mattered to them this week — anything at all.",
+      "Partner 2 listens without interrupting. When Partner 1 finishes, reflect back: 'What I heard you say is…'",
+      "Partner 2 checks: 'Did I get that right?'",
+      "Partner 1 clarifies anything that was missed. Then switch roles.",
+      "After both partners have spoken, share one word each about how it felt to be truly heard."
+    ],
+    "reflection": "What was harder — the speaking or the listening? What does that tell you about your default style?"
+  },
+  {
+    "id": "ex_002",
+    "title": "The XYZ Statement",
+    "description": "Say the hard thing without triggering a defensive response.",
+    "tags": ["communication", "conflict"],
+    "duration": "15 min",
+    "difficulty": "Beginner",
+    "steps": [
+      "Each partner independently thinks of one thing that bothered them recently.",
+      "Write it down in the attacking form first: 'You always…' or 'You never…'",
+      "Now rewrite it using the format: 'When you do X in situation Y, I feel Z.'",
+      "Take turns reading your softened version out loud. The listener's only job is to say: 'Thank you for telling me.'",
+      "No rebuttals, no defenses — just acknowledgment. Discuss how the rewrite felt different."
+    ],
+    "reflection": "Which version felt more true to what you actually needed? What made the rewrite harder to say?"
+  },
+  {
+    "id": "ex_003",
+    "title": "The 30-Second Hug",
+    "description": "Reconnect through sustained physical presence — simple, powerful, and underused.",
+    "tags": ["intimacy", "connection"],
+    "duration": "2 min",
+    "difficulty": "Beginner",
+    "steps": [
+      "Stand facing each other. Set a timer for 30 seconds.",
+      "Hug — not a quick squeeze. A real hold. Let your breathing slow down.",
+      "Don't talk during the hug. Just notice what you feel.",
+      "When the timer ends, stay in the hug for 5 more seconds if it feels right.",
+      "Each share one word about how it felt."
+    ],
+    "reflection": "Did 30 seconds feel long or short? What does your answer tell you about how comfortable you are with sustained closeness?"
+  },
+  {
+    "id": "ex_004",
+    "title": "The Softened Startup",
+    "description": "Begin a difficult conversation gently enough that your partner can actually hear you.",
+    "tags": ["conflict", "communication"],
+    "duration": "15 min",
+    "difficulty": "Intermediate",
+    "steps": [
+      "Each partner writes down one topic you've been avoiding because it tends to blow up.",
+      "Write your opening line the way you'd usually say it — honest, probably a bit blaming.",
+      "Now rewrite the opening using: 'I feel ___ about ___ and I need ___.'",
+      "Take turns reading your softened opening out loud. The listener repeats back what they heard.",
+      "Discuss: what made the softened version easier or harder to say?"
+    ],
+    "reflection": "What do you protect when you start a conversation in attack mode? What does softening it risk for you?"
+  },
+  {
+    "id": "ex_005",
+    "title": "Repair Attempt Practice",
+    "description": "Build a toolkit of small gestures that de-escalate conflict before it becomes damage.",
+    "tags": ["conflict", "trust"],
+    "duration": "20 min",
+    "difficulty": "Intermediate",
+    "steps": [
+      "Together, brainstorm 10 things one of you could say or do mid-argument that signals 'I don't want to fight — I want to reconnect.'",
+      "Examples to spark ideas: a specific phrase, a touch on the arm, a hand signal, a shared joke, leaving the room for 5 minutes, making tea.",
+      "Each partner picks 3 from the list that they'd genuinely respond to (not just things they'd do).",
+      "Write your chosen 3 on a card or in your phones. These are your official repair attempts.",
+      "Agree: if you use one of these during a conflict, the other person commits to recognizing it and pausing."
+    ],
+    "reflection": "Which repair attempt felt most natural to offer? Which felt hardest to receive — and why?"
+  },
+  {
+    "id": "ex_006",
+    "title": "Appreciation Flashback",
+    "description": "Reactivate warmth by deliberately returning to what you love about each other.",
+    "tags": ["connection", "intimacy"],
+    "duration": "10 min",
+    "difficulty": "Beginner",
+    "steps": [
+      "Each partner independently writes 3 specific things they genuinely appreciate about the other. Not general — specific memories or traits.",
+      "Take turns reading your list out loud. The listener's only job is to receive it without deflecting ('Oh, that's nothing…').",
+      "After both have read, discuss: was there anything that surprised you about what your partner noticed?",
+      "Optionally: save your lists and read them again during your next rough patch."
+    ],
+    "reflection": "Why do we forget to say these things? What gets in the way of appreciation becoming a daily habit?"
+  },
+  {
+    "id": "ex_007",
+    "title": "The State of the Union",
+    "description": "A structured 20-minute weekly check-in that prevents small problems from becoming big ones.",
+    "tags": ["teamwork", "communication"],
+    "duration": "20 min",
+    "difficulty": "Beginner",
+    "steps": [
+      "Set a timer. Each partner gets 10 minutes, uninterrupted.",
+      "Partner 1 answers: 'How did I feel loved this week? What was hard? What do I need more of next week?'",
+      "Partner 2 listens without responding — just takes notes if helpful.",
+      "Switch. Partner 2 answers the same three questions.",
+      "After both have spoken, take 5 minutes to agree on one specific thing each of you will do differently next week."
+    ],
+    "reflection": "What made it easier or harder to be honest in this format? What would make you want to do this every week?"
+  },
+  {
+    "id": "ex_008",
+    "title": "Dreams Behind the Fight",
+    "description": "Discover what deeper need or value is actually driving your most persistent conflict.",
+    "tags": ["conflict", "trust"],
+    "duration": "25 min",
+    "difficulty": "Intermediate",
+    "steps": [
+      "Pick one recurring argument topic — the one you've had 10+ times without resolving.",
+      "Each partner independently writes: 'When we fight about this, what I'm really afraid of is… What I'm really wanting is…'",
+      "Share your answers out loud — no debating, just listening.",
+      "Together, see if you can identify the shared value underneath both of your positions (e.g., you both want security — you just define it differently).",
+      "Write the shared value at the top of the topic: 'We both want ___. We just show it differently.'"
+    ],
+    "reflection": "Did finding the shared value change how the fight feels? What would change if you started from the shared value, not the surface disagreement?"
+  },
+  {
+    "id": "ex_009",
+    "title": "The 5-Year Letter",
+    "description": "Reconnect with your shared future by writing to the couple you're building toward.",
+    "tags": ["teamwork", "connection"],
+    "duration": "30 min",
+    "difficulty": "Beginner",
+    "steps": [
+      "Each partner independently writes a letter from the future — dated 5 years from today — to their current selves.",
+      "In the letter: describe what your relationship looks and feels like. What did you build? How do you spend your days? What do you feel toward each other?",
+      "Read your letters to each other out loud.",
+      "Discuss: what's the same in both letters? What's different? What does the difference reveal?",
+      "Together, write one sentence that captures the shared future you both want."
+    ],
+    "reflection": "What in your partner's letter surprised you? What in your own letter surprised you?"
+  },
+  {
+    "id": "ex_010",
+    "title": "The Intimacy Map",
+    "description": "Understand each other's actual intimacy needs — not the ones you assume.",
+    "tags": ["intimacy", "communication"],
+    "duration": "20 min",
+    "difficulty": "Intermediate",
+    "steps": [
+      "Each partner rates (1–5) their current satisfaction with: emotional closeness, physical affection, sexual connection, intellectual intimacy, spiritual/values alignment.",
+      "Also note: what makes you feel most desired? What makes you feel pressured?",
+      "Share your ratings and notes. The listener doesn't defend — just asks: 'What would a 5 look like for you in that area?'",
+      "Identify the area with the biggest gap between partners — this is your starting point.",
+      "Agree on one specific, low-stakes thing you'll each try this week to move that needle."
+    ],
+    "reflection": "Which area was hardest to rate honestly? What made it vulnerable to admit?"
+  }
+]
